@@ -1,0 +1,34 @@
+@if (!house) {
+  <h1>House Not Found</h1>
+} @else {
+  <article>
+    <img class="listing-photo" [ngSrc]="house.photo" alt="Exterior photo of {{ house.name }}" width="402" height="600" priority crossorigin/>
+    <section class="listing-description">
+      <h2 class="listing-heading">{{ house.name }}</h2>
+      <p class="listing-location">{{ `${house.city} ${house.state}` }}</p>
+    </section>
+    <section class="listing-features">
+      <h2 class="section-heading">About this housing location</h2>
+      <ul>
+        <li>Units available: {{ house.availableUnits.value }}</li>
+        <li>Have wifi: {{ house.wifi ? "yes" : "no" }}</li>
+        <li>Have laundry: {{ house.laundry ? "yes" : "no" }}</li>
+      </ul>
+    </section>
+    <section class="listing-apply">
+      <h2 class="section-heading">Apply now to live here</h2>
+      <form [formGroup]="applyForm" (submit)="submitApplication()">
+        <label>
+          First Name <input id="first-name" type="text" formControlName="firstName">
+        </label>
+        <label>
+          Last Name <input id="last-name" type="text" formControlName="lastName">
+        </label>
+        <label>
+          Email <input id="email" type="email" formControlName="email">
+        </label>
+        <button class="primary" type="submit" [disabled]="applyForm.invalid">Apply now</button>
+      </form>
+    </section>
+  </article>
+}
