@@ -6,10 +6,9 @@
     "start": "concurrently \"npm run development\" \"npm run api\"",
     "development": "ng serve",
     "api": "json-server db.json",
-    "build": "ng build --configuration production --base-href=\"./AngularTutorialApp\"",
+    "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test",
-    "deploy": "angular-cli-ghpages --dir=dist/tutorial"
+    "test": "ng test"
   },
   "private": true,
   "dependencies": {
@@ -29,7 +28,6 @@
     "@angular/cli": "^19.2.8",
     "@angular/compiler-cli": "^19.2.0",
     "@types/jasmine": "~5.1.0",
-    "angular-cli-ghpages": "^2.0.3",
     "concurrently": "^9.1.2",
     "jasmine-core": "~5.6.0",
     "karma": "~6.4.0",
